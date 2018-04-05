@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Matrix_oop_template 
+public class Matrix_oop_templatee 
 {
     public static void main(String[] args)
     {
@@ -64,11 +64,11 @@ public class Matrix_oop_template
                 break;
             case("AN"):
                 System.out.print("\nEnter a value you would like to add to each element: ");
-                int num = input.nextInt();
-                m1.setNum(num);
-                anmat = m1.add();
-                anmat.printMatrix();
-                break;
+            	int num = input.nextInt();
+            	m1.setNum(num);
+            	anmat = m1.add();
+            	anmat.printMatrix();
+            	break;
             case("Q"): 
                 System.out.println("\n  Exiting.\n");
                 input.close();
@@ -88,10 +88,12 @@ public class Matrix_oop_template
         System.out.println("  C columnSum   - Caclulate the sum of the values in each column");
         System.out.println("  R reverseRows - Reverse all elements in every row of the matrix");
         System.out.println("  P printMatrix - Print the original matrix");
+        System.out.println("  AR addReverse - Add the reverse to the original matrix");
+        System.out.println("  AN addNumeber - Add a number to the original matrix");
         System.out.println("  Q quit        - Exit the program");
         System.out.println("______________________________________________________________________\n");
 
-        System.out.print("\n  Enter: T, C, R, P, AR or Q =>  ");
+        System.out.print("\n  Enter: T, C, R, P, AR, AN or Q =>  ");
     }     
 }
 
@@ -205,12 +207,12 @@ class Matrix
 
     Matrix add(Matrix matrix)
     {
-        int[][] matrixArray= matrix.getMatrix();
+        int[][] matrixArray = matrix.getMatrix();
         int arow=mat.length;
         int acol=mat[0].length;
         for (int i=0; i<arow; i++)
         {
-            for (int j=0; j<acol; j++)
+            for (int j = 0; j<acol; j++)
             {
                 mat[i][j] = mat[i][j] + matrixArray[i][j];
             }
@@ -230,17 +232,17 @@ class Matrix
     {
         this.numToAdd=numToAdd;
     }
-    Matrix add()
-    {
-        int arow=mat.length;
-        int acol=mat[0].length;
-        for (int i=0; i<arow; i++)
-        {
-            for (int j=0; j<acol; j++)
+    Matrix add() {
+    //int[][] matrixArray = matrix.getMatrix();
+            int arow=mat.length;
+            int acol=mat[0].length;
+            for (int i=0; i<arow; i++)
             {
-                mat[i][j] = mat[i][j] + this.numToAdd;
+                for (int j = 0; j<acol; j++)
+                {
+                    mat[i][j] = mat[i][j] + this.numToAdd;
+                }
             }
-        }
-        return this; 
+        return this;
     }
 }
